@@ -25,6 +25,7 @@ def pregunta_11():
     tbl1 = pd.read_csv('files/input/tbl1.tsv', sep='\t')
     tblreturn = pd.DataFrame()
     tblreturn["c4"] = tbl1.groupby('c0')['c4'].apply(lambda x: ','.join(x.sort_values()))
+    tblreturn['c0'] = tblreturn.index
     return tblreturn
 
 if __name__ == '__main__':
