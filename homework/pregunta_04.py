@@ -21,7 +21,7 @@ def pregunta_04():
     Name: c2, dtype: float64
     """
     tbl0 = pandas.read_csv('files/input/tbl0.tsv', sep='\t')
-    print(tbl0.groupby('c1')['c2'].mean())
+    return tbl0.groupby('c1')['c2'].mean()
 
 if __name__ == '__main__':
-    pregunta_04()
+    print(pregunta_04())

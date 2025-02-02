@@ -22,7 +22,7 @@ def pregunta_03():
 
     """
     tbl0 = pandas.read_csv('files/input/tbl0.tsv', sep='\t')
-    print(tbl0['c1'].value_counts().sort_index())
+    return tbl0['c1'].value_counts().sort_index()
 
 if __name__ == '__main__':
-    pregunta_03()
+    print(pregunta_03())

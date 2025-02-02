@@ -21,7 +21,7 @@ def pregunta_05():
     Name: c2, dtype: int64
     """
     tbl0 = pandas.read_csv('files/input/tbl0.tsv', sep='\t')
-    print(tbl0.groupby('c1')['c2'].max())
+    return tbl0.groupby('c1')['c2'].max()
 
 if __name__ == '__main__':  
-    pregunta_05()
+    print(pregunta_05())

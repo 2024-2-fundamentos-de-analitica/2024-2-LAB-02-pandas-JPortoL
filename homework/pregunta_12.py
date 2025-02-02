@@ -23,9 +23,10 @@ def pregunta_12():
     39   39                    ggg:3,hhh:8,jjj:5
     """
     tbl2 = pd.read_csv('files/input/tbl2.tsv', sep='\t')
+    tblreturn = pd.DataFrame()
     tbl2['c5'] = tbl2['c5a'] + ':' + tbl2['c5b'].astype(str)
-    tbl2 = tbl2.groupby('c0')['c5'].apply(lambda x: ','.join(x.sort_values()))
-    return tbl2
+    tblreturn['c5'] = tbl2.groupby('c0')['c5'].apply(lambda x: ','.join(x.sort_values()))
+    return tblreturn
 
 if __name__ == '__main__':
      print(pregunta_12())

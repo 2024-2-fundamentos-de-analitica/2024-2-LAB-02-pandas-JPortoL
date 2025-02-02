@@ -23,8 +23,9 @@ def pregunta_11():
     39   39    a,d,f
     """
     tbl1 = pd.read_csv('files/input/tbl1.tsv', sep='\t')
-    tbl1 = tbl1.groupby('c0')['c4'].apply(lambda x: ','.join(x.sort_values()))
-    return tbl1
+    tblreturn = pd.DataFrame()
+    tblreturn["c4"] = tbl1.groupby('c0')['c4'].apply(lambda x: ','.join(x.sort_values()))
+    return tblreturn
 
 if __name__ == '__main__':
      print(pregunta_11())

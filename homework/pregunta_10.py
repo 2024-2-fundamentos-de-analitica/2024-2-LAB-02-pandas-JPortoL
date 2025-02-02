@@ -21,8 +21,10 @@ def pregunta_10():
     E   1:1:2:3:3:4:5:5:5:6:7:8:8:9
     """
     tbl0 = pd.read_csv('files/input/tbl0.tsv', sep='\t')
-    tbl0 = tbl0.groupby('c1')['c2'].apply(lambda x: ':'.join(x.astype(str).sort_values()))
-    return tbl0
+    tblreturn = pd.DataFrame()
+    tblreturn["c2"] = tbl0.groupby('c1')['c2'].apply(lambda x: ':'.join(x.astype(str).sort_values()))
+    tblreturn.index.name = 'c1'
+    return tblreturn
 
 if __name__ == '__main__':
     print(pregunta_10())

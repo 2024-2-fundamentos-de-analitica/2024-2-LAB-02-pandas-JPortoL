@@ -15,7 +15,7 @@ def pregunta_02():
 
     """
     tbl0 = pandas.read_csv('files/input/tbl0.tsv', sep='\t')
-    print(len(tbl0.columns))
+    return len(tbl0.columns)
 
 if __name__ == '__main__':
-    pregunta_02()
+    print(pregunta_02())

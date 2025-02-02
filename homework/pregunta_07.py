@@ -21,7 +21,7 @@ def pregunta_07():
     Name: c2, dtype: int64
     """
     tbl0 = pandas.read_csv('files/input/tbl0.tsv', sep='\t')
-    print(tbl0.groupby('c1')['c2'].sum())
+    return tbl0.groupby('c1')['c2'].sum()
 
 if __name__ == '__main__':
-    pregunta_07()
+    print(pregunta_07())
