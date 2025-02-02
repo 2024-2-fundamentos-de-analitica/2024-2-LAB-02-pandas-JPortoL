@@ -26,6 +26,7 @@ def pregunta_11():
     tblreturn = pd.DataFrame()
     tblreturn["c4"] = tbl1.groupby('c0')['c4'].apply(lambda x: ','.join(x.sort_values()))
     tblreturn['c0'] = tblreturn.index
+    tblreturn = tblreturn[['c0', 'c4']]
     return tblreturn
 
 if __name__ == '__main__':

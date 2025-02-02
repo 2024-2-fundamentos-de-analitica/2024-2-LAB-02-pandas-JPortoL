@@ -27,6 +27,7 @@ def pregunta_12():
     tbl2['c5'] = tbl2['c5a'] + ':' + tbl2['c5b'].astype(str)
     tblreturn['c5'] = tbl2.groupby('c0')['c5'].apply(lambda x: ','.join(x.sort_values()))
     tblreturn['c0'] = tblreturn.index
+    tblreturn = tblreturn[['c0', 'c5']]
     return tblreturn
 
 if __name__ == '__main__':
